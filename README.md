@@ -1,8 +1,4 @@
-![](public/favicon-96x96.png)
-
-# [Meteor Hunt](http://meteorhunt.meteor.com/)
-
-A [Product Hunt](http://www.producthunt.com/apps/ios) clone built using [meteoric:meteor-ionic](https://github.com/meteoric/meteor-ionic). **Currently in progress**
+## A simple app based on meteor.js
 
 ## Running the app
 
@@ -10,5 +6,3 @@ A [Product Hunt](http://www.producthunt.com/apps/ios) clone built using [meteori
 cp settings.json.example settings.json
 meteor --settings settings.json
 ```
-## License
-[MIT License](https://github.com/meteoric/meteorhunt/blob/master/LICENSE)
