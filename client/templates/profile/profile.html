@@ -1,0 +1,38 @@
+<template name="profile">
+  {{#if currentUser}}
+    {{#contentFor "headerButtonRight"}}
+      <button class="button button-clear pull-right button-positive" data-ion-modal="settings">
+        {{> ionIcon icon='ios-gear-outline'}}
+      </button>
+    {{/contentFor}}
+  {{/if}}
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">Profile</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+
+      {{#with user}}
+        {{> _profileHeader}}
+
+        <!--invite friends-->
+        <div class="profile-header" style="background-image: url('../images/background/friends-v1.jpg');">
+            <h3>More people to play with</h3>
+            <h3>Invite your friends today</h3>
+            <a href="" class="btn btn-success btn-lg" style="height: auto; ">Invite Now</a>
+        </div>
+        <!--/invite friends-->
+      {{else}}
+        <div class="empty-view">
+          {{> ionIcon icon="ios-person"}}
+          No profile yet!
+        </div>
+      {{/with}}
+
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>

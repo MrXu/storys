@@ -1,0 +1,47 @@
+<!--layout: blankLayout-->
+<template name="plot_bypage_B">
+
+  <!--{{#contentFor "headerButtonRight"}}-->
+      <!--<button class="button button-clear pull-right button-positive" data-action="share-story" data-product-id="{{plot._id}}">-->
+        <!--{{> ionIcon icon='ios-upload-outline'}}-->
+      <!--</button>-->
+  <!--{{/contentFor}}-->
+
+  {{#contentFor "headerTitle"}}
+      <h1 class="title">{{story.storyName}}</h1>
+  {{/contentFor}}
+
+
+  {{#ionView}}
+    {{#ionContent}}
+
+      {{#with plot}}
+
+          <div class="padding" style="margin-top: 20px;">
+              <p class="plot-p">{{plotDetail}}</p>
+          </div>
+
+        {{#each options}}
+
+            <a href="{{pathFor route='plotA' data=plotId }}" class="button button-block next-plot-button">
+              {{actionBrief}}
+            </a>
+        {{/each}}
+
+          <div class="h-center" style="margin-top: 30px;margin-bottom: 30px;">
+              或者
+          </div>
+          <a href="{{pathFor route='newPlot'}}" class="button button-block button-dark next-plot-button">写个新剧情</a>
+
+          {{#with story}}
+              <div class="h-center" style="margin-top: 30px;margin-bottom: 30px;">
+                  <a href="{{pathFor route='story'}}">回到故事开始</a>
+              </div>
+          {{/with}}
+
+      {{/with}}
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

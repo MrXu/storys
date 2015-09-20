@@ -1,0 +1,16 @@
+<template name="createStory">
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">写个新故事</h1>
+    {{/contentFor}}
+
+    {{#ionView}}
+        {{#ionContent}}
+            <div class="empty-view">
+                {{> ionIcon icon="ios-compose-outline"}}
+                暂未开放创作。请加微信mrjasonxuwei。
+            </div>
+        {{/ionContent}}
+    {{/ionView}}
+
+</template>

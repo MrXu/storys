@@ -1,0 +1,49 @@
+<template name="explore">
+
+  {{#contentFor "headerButtonLeft"}}
+    <button class="button button-clear pull-left button-positive" data-ion-modal="search">
+      {{> ionIcon icon='ios-search'}}
+    </button>
+  {{/contentFor}}
+
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">发现故事</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+        {{#ionSlideBox}}
+            {{#ionSlide class="positive-bg explore-slide-wrapper"}}
+                <h2 class="color-white">一个故事</h2>
+                <h2 class="color-white">可以有千个结局</h2>
+            {{/ionSlide}}
+            {{#ionSlide class="dark-bg explore-slide-wrapper"}}
+                <h2 class="color-white">角色的命运</h2>
+                <h2 class="color-white">在你每一步的选择</h2>
+            {{/ionSlide}}
+            {{#ionSlide class="light-bg explore-slide-wrapper"}}
+                <h2 class="color-black">愿意相信哪个结局</h2>
+                <h2 class="color-black">你说了算</h2>
+            {{/ionSlide}}
+        {{/ionSlideBox}}
+
+        <!--<div class="screen-wide-div" style="background-image: url('../images/background/beach.jpg');">-->
+            <!--<div class="row v-center-row h-center">-->
+                <!--<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 v-center-col">-->
+                    <!--<h3>Explore yourself. Be someboday.</h3>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        {{#each storys}}
+            {{> storyTile story=this}}
+        {{/each}}
+
+
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

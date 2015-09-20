@@ -1,0 +1,50 @@
+<template name="newPlot">
+
+    {{#contentFor "headerButtonLeft"}}
+        {{>ionNavBackButton class="button-positive" text=false}}
+    {{/contentFor}}
+
+    <!--{{#contentFor "headerButtonRight"}}-->
+        <!--<button class="button button-clear pull-right button-positive" data-action="share-product" data-product-id="{{product._id}}">-->
+            <!--{{> ionIcon icon='ios-upload-outline'}}-->
+        <!--</button>-->
+    <!--{{/contentFor}}-->
+
+    {{#contentFor "headerTitle"}}
+        <h1 class="title">{{story.storyName}}</h1>
+    {{/contentFor}}
+
+
+    {{#ionView}}
+        {{#ionContent}}
+            <div class="padding">
+                <p class="plot-p">{{plot.plotDetail}}</p>
+            </div>
+
+            <!-- form -->
+            <form id="newPlotForm">
+                <legend>添加新情节</legend>
+
+                <label type="placeholder" placeholderonly="true" class="item item-input">
+                    <input type="text" label-type="placeholder" placeholder="情节动作 (上一章节做的选择)" name="plotAction" required="" data-schema-key="plotDetail" maxlength="300">
+                </label>
+
+                <label type="placeholder" placeholderonly="true" class="item item-input">
+                    <textarea label-type="placeholder" placeholder="故事内容 (本章节内容)" name="plotDetail" rows="20" required="" data-schema-key="plotDetail" maxlength="3000"></textarea>
+                </label>
+
+                <div class="padding">
+                    <button type="submit" class="button button-positive button-block">
+                        添加情节
+                    </button>
+                </div>
+            </form>
+
+
+        {{/ionContent}}
+    {{/ionView}}
+
+
+
+
+</template>

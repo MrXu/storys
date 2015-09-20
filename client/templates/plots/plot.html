@@ -1,0 +1,69 @@
+<template name="plot">
+
+
+
+
+    {{#ionSideMenus}}
+
+        {{#ionSideMenu side="right"}}
+            <div class="bar bar-header bar-dark">
+                <h1 class="title">选项</h1>
+            </div>
+            <div class="content has-header">
+                <div class="list">
+                    <div class="item item-icon-left" data-ion-menu-close>
+                        {{> ionIcon icon="ios-arrow-left"}} {{plot._id}}
+                    </div>
+                </div>
+            </div>
+        {{/ionSideMenu}}
+
+    {{/ionSideMenus}}
+
+    {{#ionSideMenuContent}}
+
+        {{> ionNavBar class="header-bar-grey"}}
+        {{#contentFor "headerTitle"}}
+            <h1 class="title" style="color:#ffffff">{{plot._id}}</h1>
+            <button class="button button-clear pull-right" data-ion-menu-toggle="right" style="color: #ffffff;">
+                {{#if isAndroid}}
+                    {{> ionIcon icon='android-more-vertical'}}
+                {{else}}
+                    {{> ionIcon icon='navicon'}}
+                {{/if}}
+            </button>
+        {{/contentFor}}
+
+        {{#ionNavView}}
+            {{#ionView}}
+                {{#ionContent}}
+
+                    {{#with plot}}
+
+                        <div class="padding" style="margin-top: 20px;">
+                            <p>{{plotDetail}}</p>
+                        </div>
+
+                        {{#each options}}
+                            <a href="{{pathFor route='plot' data=plotId }}" class="btn btn-success btn-lg">
+                                {{actionBrief}}
+                            </a>
+                        {{/each}}
+
+                        <a href="{{pathFor route='newPlot'}}">写个新剧情</a>
+
+                    {{/with}}
+                {{/ionContent}}
+            {{/ionView}}
+        {{/ionNavView}}
+
+    {{/ionSideMenuContent}}
+
+
+
+
+
+
+
+
+</template>

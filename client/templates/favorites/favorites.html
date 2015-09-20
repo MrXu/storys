@@ -1,0 +1,24 @@
+<template name="favorites">
+
+  {{#contentFor "headerTitle"}}
+    <h1 class="title">收藏</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+        {{#if storys}}
+            {{#each storys}}
+                {{> storyTile story=this}}
+            {{/each}}
+
+        {{else}}
+            <div class="empty-view">
+                {{> ionIcon icon="ios-heart"}}
+                没有读过
+            </div>
+        {{/if}}
+    {{/ionContent}}
+  {{/ionView}}
+
+</template>

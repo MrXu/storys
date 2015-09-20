@@ -1,0 +1,17 @@
+<template name="blankTransitionLayout">
+
+  {{#ionBody}}
+
+    {{> ionNavBar}}
+
+    {{#ionNavView}}
+
+      {{#transitioner}}
+        {{> yield}}
+      {{/transitioner}}
+
+    {{/ionNavView}}
+
+  {{/ionBody}}
+
+</template>

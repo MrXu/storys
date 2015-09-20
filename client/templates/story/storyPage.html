@@ -1,0 +1,89 @@
+<template name="story">
+
+  {{#contentFor "headerButtonLeft"}}
+    {{>ionNavBackButton class="button-positive" text=false}}
+  {{/contentFor}}
+
+  {{#contentFor "headerButtonRight"}}
+      <button class="button button-clear pull-right button-positive" data-action="share-product" data-product-id="{{product._id}}">
+        {{> ionIcon icon='ios-upload-outline'}}
+      </button>
+  {{/contentFor}}
+
+  {{#contentFor "headerTitle"}}
+      <h1 class="title">{{story.storyName}}</h1>
+  {{/contentFor}}
+
+  {{#ionView}}
+    {{#ionContent}}
+
+
+        <div class="product-detail">
+          {{#with story}}
+
+              <!-- picture slides -->
+            {{#ionSlideBox}}
+
+              {{#each pictures}}
+                {{#ionSlide class="positive-bg"}}
+                    <img src="{{url}}" />
+                {{/ionSlide}}
+              {{/each}}
+
+            {{/ionSlideBox}}
+              <!-- / picture slides -->
+
+              <!-- product brief introduction -->
+              <div class="padding">
+                  <div class="h-center product-details-div">
+                      <h3>{{storyName}}</h3>
+                      <h4><small>写开头的：{{author.profile.name}}</small></h4>
+                  </div>
+                  <hr>
+                  <div class="h-center product-details-div">
+                      <div class="row rm-margin">
+                          <p>{{storyBrief}}</p>
+                      </div>
+                  </div>
+                  <!--product detailed introduction-->
+                  <!-- / product detailed introduction-->
+              </div>
+              <!-- / product brief introduction -->
+
+              <!-- host introduction -->
+              <div class="padding product-details-div-grey">
+                  <div class="h-center product-details-div">
+                    {{#with author}}
+                        <h4>关于 {{profile.name}}</h4>
+                      {{> avatar user=this size="large" shape="circle"}}
+                        <p>{{author.introduction}}</p>
+                    {{/with}}
+                  </div>
+              </div>
+              <!-- host introduction -->
+
+              <!-- a big button to start reading -->
+              <div class="padding">
+                  <div class="h-center product-details-div">
+                      <a class="button button-block" style="color: #fff;background-color: #5cb85c;border-color: #4cae4c" href="{{pathFor route="plotA" data=plotOneId}}">
+                          第一章
+                      </a>
+                  </div>
+                  <hr>
+              </div>
+              <!-- / a big button to start reading -->
+
+          {{/with}}
+
+
+            <div class="list">
+              {{#each comments}}
+                {{> _comment}}
+              {{/each}}
+            </div>
+
+        </div>
+
+    {{/ionContent}}
+  {{/ionView}}
+</template>
