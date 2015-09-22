@@ -17,8 +17,13 @@ Meteor.startup(function() {
 });
 
 Accounts.onCreateUser(function(options, user) {
-  user.emails = user.services['facebook'].email;
-  user.profile.facebooklink = user.services['facebook'].link;
+  //user.emails = user.services['facebook'].email;
+  //user.profile.facebooklink = user.services['facebook'].link;
   //user.profile = options.profile;
+  if(options.profile){
+    user.profile = options.profile;
+  }else{
+    user.profile = {};
+  }
   return user;
 });
